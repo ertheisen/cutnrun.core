@@ -1,0 +1,11 @@
+#core
+jupyter
+pandas
+matplotlib
+scipy
+numpy
+pybedtools
+pysam
+
+
+
