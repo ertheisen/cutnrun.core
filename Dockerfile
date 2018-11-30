@@ -201,3 +201,8 @@ RUN pip install pysam==0.11.2.2
 RUN pip install cython
 RUN pip install edd
 
+## Install deeptools
+RUN pip3 install py2bit
+RUN pip3 install pyBigWig
+RUN pip3 install deeptools
+
