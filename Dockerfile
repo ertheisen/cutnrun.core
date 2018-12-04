@@ -207,4 +207,5 @@ RUN pip3 install pyBigWig
 RUN pip3 install deeptools
 
 RUN mkdir -p /appscripts
+RUN sed -i -e "/^assistive_technologies=/s/^/#/" /etc/java-8-openjdk/accessibility.properties
 
