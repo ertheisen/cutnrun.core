@@ -206,3 +206,5 @@ RUN pip3 install py2bit
 RUN pip3 install pyBigWig
 RUN pip3 install deeptools
 
+RUN mkdir -p /appscripts
+
