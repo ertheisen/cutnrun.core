@@ -215,3 +215,5 @@ RUN pip install matplotlib \
 	&& pip install pysam \
 	&& pip install pandas
 
+RUN apt-get install python-tk -y
+
