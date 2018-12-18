@@ -217,3 +217,22 @@ RUN pip install matplotlib \
 
 RUN apt-get install python-tk -y
 
+##Install STAR
+ENV STAR_URL https://github.com/alexdobin/STAR/archive/
+ENV STAR_VERSION 2.6.1d
+ENV STAR_RELEASE ${STAR_VERSION}.tar.gz
+
+RUN mkdir -p ${DEST_DIR}/STAR-${STAR_VERSION}
+
+WORKDIR /tmp
+
+# Do this in one command to avoid caching the zip file and its removal in separate layers
+RUN curl -SLO ${STAR_URL}/${STAR_RELEASE} && tar -xzf ${STAR_VERSION}.tar.gz
+RUN mv STAR-${STAR_VERSION}/ ${DEST_DIR}
+
+# Make the wrapper script executable
+RUN chmod a+x ${DEST_DIR}/STAR-${STAR_VERSION}/bin
+
+# Include it in PATH
+ENV PATH ${DEST_DIR}/STAR-${STAR_VERSION}/bin/Linux_x86_64_static:$PATH
+
