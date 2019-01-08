@@ -236,3 +236,5 @@ RUN chmod a+x ${DEST_DIR}/STAR-${STAR_VERSION}/bin
 # Include it in PATH
 ENV PATH ${DEST_DIR}/STAR-${STAR_VERSION}/bin/Linux_x86_64_static:$PATH
 
+RUN apt-get install bedtools
+
